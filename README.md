@@ -17,7 +17,7 @@ Checkers is a two-person board game played on an 8x8 game board (same as chess b
 - Also unlike Pawns, a King may jump other players in either a forward or backward direction, in any combination.
 
 ### Game visualization in IDE:
-![Image](visualize.png)
+![Image](visualize.jpg)
 
 
 
