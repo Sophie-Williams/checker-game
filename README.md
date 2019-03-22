@@ -118,3 +118,8 @@ Then we iterate over all the available Pieces and pick the move with the higest 
 
 ## Indicating decision
 Inform the `Game` of our best move via the `movePieceTo()` method by passing in the piece we want to move and the destination location.
+
+## Game Ending Example
+The blue forfeited the game because there are no valid moves for all of the remaining blue pieces.
+
+![Image](ending.jpg)
