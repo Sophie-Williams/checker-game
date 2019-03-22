@@ -20,6 +20,48 @@ Checkers is a two-person board game played on an 8x8 game board (same as chess b
 ![Image](visualize.jpg)
 
 
+## Member of the game
+For this game, we define 'Piece', 'Tile' and 'Location' as three main components of the game.   
+
+#### Piece class
+```cpp
+class Piece {
+  public:
+    
+    Piece(PieceColor aColor, Location aLocation, PieceKind aKind=PieceKind::pawn) :
+      kind(aKind), color(aColor), location(aLocation) {
+    }
+   
+    const PieceColor  color;
+    Location          location;
+    PieceKind         kind;
+  };
+```
+
+#### Tile class
+```cpp
+struct Tile {
+    Tile(TileColor aTileColor, Location aLocation, Piece *aPiece=nullptr)
+      : color(aTileColor), piece(aPiece), location(aLocation) {
+    }
+
+    Tile(const Tile &aTile) : color(aTile.color), location(aTile.location), piece(nullptr) {}
+
+    const TileColor  color;
+    const Location   location; //temporary copy of board location
+    Piece            *piece;    
+  };
+```
+
+#### Location class
+```cpp
+  struct Location {
+    int  row;
+    int  col;
+    Location(int aRow, int aCol) : row(aRow), col(aCol) {}
+    Location(const Location &aCopy) : row(aCopy.row), col(aCopy.col) {}
+  };
+```
 
 ## Overall strategies     
 1.	Find all possible moves for each piece, for each move there may be 1 step or 2 steps, thus returning a vector containing a vector.
